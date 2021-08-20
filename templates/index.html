@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<!--
+	Tessellate by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+
+<html>
+  <head>
+    <title>Borneo Bat Database</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../static/assets/css/main.css"
+    />
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <section id="header" class="dark">
+      <header>
+        <h1><b>Borneo Bat Call Database</b></h1>
+        <p>A collection bat of calls from the rainforests of Borneo</p>
+        <div
+          style="
+            width: 100%;
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            text-align: start;
+          "
+        >
+          Image by Justin
+          <a href="https://www.instagram.com/rainforestkayaker/?hl=en"
+            >@rainforestkayaker</a
+          >
+        </div>
+      </header>
+      <footer>
+        <a href="#first" class="button scrolly">Search Calls</a>
+        <a href="#second" class="button scrolly">Spectogram Gallery</a>
+        <a href="#third" class="button scrolly">Contributors</a>
+      </footer>
+    </section>
+
+    <!-- First -->
+
+    <section id="first" class="main">
+      <header>
+        <div class="container">
+          <h2 style="color: #49505c">Search Calls</h2>
+        </div>
+      </header>
+      <div class="content dark style1">
+        <div class="container">
+          <section>
+            <p>
+              This website gives search access to the meta data of the bat call
+              data base. The respective audio files can be retrieved from
+              <a href="https://figshare.com/">Figshare</a> using the digital
+              object identifiers (DOIs) returned. Choose one of the following
+              options for each field to get the DOIs of bat recordings matching
+              your selection.
+            </p>
+          </section>
+          <section>
+            <header>
+              <h3>Fields</h3>
+            </header>
+            <ol class="default">
+              <div class="content style1">
+                <div class="container">
+                  <form>
+                    <div class="row gtr-50">
+                      <div class="col-6">
+                        <select
+                          class="select"
+                          id="Family"
+                          name="Family"
+                          required
+                        >
+                          <option selected value="placeholder">
+                            Select Family
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <select class="select" id="Genus" name="Genus" required>
+                          <option selected value="placeholder">
+                            Select Genus
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="row gtr-50">
+                      <div class="col-6">
+                        <select
+                          class="select"
+                          id="Species"
+                          name="Species"
+                          required
+                        >
+                          <option selected value="placeholder">
+                            Select Species
+                          </option>
+                        </select>
+                      </div>
+                      <div class="col-6">
+                        <select
+                          class="select"
+                          id="Country"
+                          name="Country"
+                          required
+                        >
+                          <option selected value="placeholder">
+                            Select Country
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="col-6">
+                      <input
+                        href="#myTable"
+                        type="button"
+                        value="Submit"
+                        id="submitBtn"
+                      />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </ol>
+          </section>
+          <section id="outcomeTableSection">
+            <header>
+              <h3>Outcome</h3>
+            </header>
+            <br /><br />
+            <div
+              class="table wrapper"
+              style="
+                height: 100%;
+                overflow-y: scroll;
+                display: block;
+                max-height: 600px;
+              "
+            >
+              <table
+                id="outcomeTable"
+                class="default"
+                style="background: white; color: #49505c; font-size: 12pt"
+              ></table>
+            </div>
+            <br /><br />
+            <a class="button" id="reset" href="#first">Reset Search</a>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- Second -->
+    <section id="second" class="main">
+      <header>
+        <div class="container">
+          <h2 style="color: #584d4c">Spectrogram Gallery</h2>
+          <p style="color: #584d4c">
+            This is a collection of different bat call spectrograms.
+          </p>
+        </div>
+      </header>
+      <div class="content dark style2">
+        <div class="container">
+          <div class="row gtr-50">
+            <div class="col-4">
+              <section>
+                <p>
+                  The following link will give you the python code used to
+                  create the spectrogram. Just download the .wav file from
+                  <a href="https://figshare.com/">Figshare</a> and use it in the
+                  code.
+                </p>
+                <footer>
+                  <a href="../static/spectrogram.py" download class="button"
+                    >Click here for download</a
+                  >
+                </footer>
+              </section>
+            </div>
+
+            <!-- Slideshow container -->
+            <div class="col-8">
+              <div class="slideshow-container">
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 4</div>
+                  <img
+                    src="../static/images/Figure_1.png"
+                    style="width: 100%"
+                  />
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 4</div>
+                  <img
+                    src="../static/images/Figure_2.png"
+                    style="width: 100%"
+                  />
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 4</div>
+                  <img
+                    src="../static/images/Figure_3.png"
+                    style="width: 100%"
+                  />
+                </div>
+
+                <div class="mySlides fade">
+                  <div class="numbertext">4 / 4</div>
+                  <img
+                    src="../static/images/Figure_3.png"
+                    style="width: 100%"
+                  />
+                </div>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+              </div>
+              <br />
+
+              <!-- The dots/circles -->
+              <div style="text-align: center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Third -->
+    <section id="third" class="main">
+      <header>
+        <div class="container">
+          <h2 style="color: #995974">Contributors</h2>
+        </div>
+      </header>
+      <div class="content dark style3 featured">
+        <div class="container">
+          <div class="row">
+            <div class="col-4 col-12-narrow">
+              <section>
+                <span class="feature-icon"
+                  ><img
+                    src="../static/images/ulmar-with-harwickii.jpg"
+                    alt="avatar"
+                    class="avatar"
+                /></span>
+                <header>
+                  <h3>Dr. Ulmar Grafe</h3>
+                </header>
+                <p>
+                  Faculty of Science,<br />
+                  University of Brunei Darussalam
+                </p>
+              </section>
+            </div>
+            <div class="col-4 col-12-narrow">
+              <section>
+                <span class="feature-icon"
+                  ><img
+                    src="../static/images/rolf_mueller_sonarhead.jpg"
+                    alt="avatar"
+                    class="avatar"
+                /></span>
+                <header>
+                  <h3>Dr. Rolf Müller</h3>
+                </header>
+                <p>
+                  Department of Mechanical Engineering,<br />
+                  Virginia Tech
+                </p>
+              </section>
+            </div>
+            <div class="col-4 col-12-narrow">
+              <section>
+                <span class="feature-icon"
+                  ><img
+                    src="../static/images/Snapseed.jpg"
+                    alt="avatar"
+                    class="avatar"
+                /></span>
+                <header>
+                  <h3>Dev Patel</h3>
+                </header>
+                <p>
+                  Department of Computer Science,<br />
+                  Virginia Tech
+                </p>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+      <div class="copyright">
+        <ul class="menu" style="color: grey">
+          <li>
+            Contact:
+            <script language="JavaScript">
+              firstName = "rolf";
+              lastName = "mueller";
+              site = "vt.edu";
+              document.write(
+                '<a href="mailto:' +
+                  firstName +
+                  "." +
+                  lastName +
+                  "@" +
+                  site +
+                  '">'
+              );
+            </script>
+            Dr. Rolf Müller
+          </li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="../static/assets/js/jquery.min.js"></script>
+    <script src="../static/assets/js/jquery.scrolly.min.js"></script>
+    <script src="../static/assets/js/browser.min.js"></script>
+    <script src="../static/assets/js/breakpoints.min.js"></script>
+    <script src="../static/assets/js/util.js"></script>
+    <script src="../static/assets/js/main.js"></script>
+  </body>
+</html>
