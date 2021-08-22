@@ -1,18 +1,18 @@
 from flask import Flask, json, jsonify, render_template, request, url_for
 import pyodbc
 
-website = Flask(__name__)
+app = Flask(__name__)
 
 conn = pyodbc.connect('Driver={ODBC Driver 17 for SQL Server};Server=tcp:borneobats.database.windows.net,1433;Database=borneobats;Uid=borneobats;Pwd=EeL1ied8@Aish7lai;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;')
 
 cursor = conn.cursor()
 
-@website.route('/', methods = ['POST', 'GET'])
+@app.route('/', methods = ['POST', 'GET'])
 def homepage():
     return render_template("index.html")
 
 
-@website.route('/api/output/table/<family>/<genus>/<species>/<country>', methods=['GET', 'POST'])
+@app.route('/api/output/table/<family>/<genus>/<species>/<country>', methods=['GET', 'POST'])
 def createOutputTable(family, genus, species, country):
     if request.method == 'GET':
 
@@ -59,7 +59,7 @@ def createOutputTable(family, genus, species, country):
     return jsonify(headings, matrix)
 
 
-@website.route('/api/distinct/Genus/<family>', methods=['GET', 'POST'])
+@app.route('/api/distinct/Genus/<family>', methods=['GET', 'POST'])
 def helperDynamicDropdownFam(family):
     if request.method == 'GET':
         if family != 'Any':
@@ -71,7 +71,7 @@ def helperDynamicDropdownFam(family):
     return jsonify(arr)
 
 
-@website.route('/api/distinct/Species/<genus>/<family>', methods=['GET', 'POST'])
+@app.route('/api/distinct/Species/<genus>/<family>', methods=['GET', 'POST'])
 def helperDynamicDropdownGen(genus, family):
     if request.method == 'GET':
         flag = False
@@ -94,7 +94,7 @@ def helperDynamicDropdownGen(genus, family):
     return jsonify(arr)
 
 
-@website.route('/api/distinct/Country/<spe>/<genus>/<family>', methods=['GET', 'POST'])
+@app.route('/api/distinct/Country/<spe>/<genus>/<family>', methods=['GET', 'POST'])
 def helperDynamicDropdownSpe(spe, genus, family):
     if request.method == 'GET':
         if spe == "papillosa_lenis":
@@ -128,4 +128,4 @@ def helperDynamicDropdownSpe(spe, genus, family):
 
 
 if __name__ == "__main__":
-    website.run(debug=True)
+    app.run(port=8000)
